@@ -1,0 +1,7 @@
+# Lege deine eigenen Bilder (z.B. JPEGs) in diesen Ordner ab.
+# Beispiel: meinbild1.jpg, portrait1.jpg, landschaft2024.jpg
+#
+# Beispiel für die Verwendung im Code:
+# import meinbild1 from './assets/images/meinbild1.jpg';
+#
+# Der Ordner bleibt im Git-Repository erhalten, auch wenn er leer ist.
