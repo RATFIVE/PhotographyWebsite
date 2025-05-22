@@ -391,8 +391,8 @@ export default function Portfolio() {
           onClick={() => setLightbox(null)}
           onKeyDown={e => { if (e.key === 'Escape') setLightbox(null); }}
         >
-          <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)'}} onClick={e => e.stopPropagation()}>
-            <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818'}} />
+          <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)', maxHeight: '75vh', overflowY: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={e => e.stopPropagation()}>
+            <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818', maxHeight: '60vh', objectFit: 'contain'}} />
             <div style={{marginBottom: 8, color: '#ffb400'}}><b>{lightbox.title}</b> <span style={{color: '#aaa'}}>({lightbox.year})</span></div>
             <div style={{fontSize: 15, marginBottom: 8}}>{lightbox.category} | {lightbox.camera}</div>
             <div style={{fontSize: 15, marginBottom: 16}}>{lightbox.description}</div>

@@ -66,8 +66,8 @@ export default function Home() {
             onClick={() => setLightbox(null)}
             onKeyDown={e => { if (e.key === 'Escape') setLightbox(null); }}
           >
-            <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)'}} onClick={e => e.stopPropagation()}>
-              <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818'}} />
+            <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)', maxHeight: '75vh', overflowY: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={e => e.stopPropagation()}>
+              <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818', maxHeight: '60vh', objectFit: 'contain'}} />
               <div style={{marginBottom: 8, color: '#ffb400'}}><b>{lightbox.title}</b> <span style={{color: '#aaa'}}>({lightbox.year})</span></div>
               {lightbox.category && <div style={{fontSize: 15, marginBottom: 8}}>{lightbox.category}</div>}
               <button onClick={() => setLightbox(null)} style={{position: 'absolute', top: 12, right: 12, background: '#333', color: '#ffb400', border: 'none', borderRadius: 20, width: 36, height: 36, fontSize: 22, cursor: 'pointer'}}>×</button>
