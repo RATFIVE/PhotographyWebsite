@@ -329,13 +329,13 @@ export default function Portfolio() {
   const [search, setSearch] = useState("");
   const [lightbox, setLightbox] = useState(null);
   const [page, setPage] = useState(1);
-  const perPage = 8;
+  const perPage = 10;
 
   const filtered = useMemo(() => filterImages(DUMMY_IMAGES, category, tag, search, sort), [category, tag, search, sort]);
   const paged = filtered.slice(0, page * perPage);
 
   return (
-    <main style={{background: '#fafbfc', borderRadius: '1rem', padding: '2rem 1rem'}}>
+    <main style={{background: '#181818', borderRadius: '1rem', padding: '2rem 1rem'}}>
       <h1>Portfolio</h1>
       {/* Filterleiste */}
       <div style={{display: 'flex', flexWrap: 'wrap', gap: 16, marginBottom: 24, alignItems: 'center'}}>
@@ -351,7 +351,7 @@ export default function Portfolio() {
         <input type="search" placeholder="Suche..." value={search} onChange={e => setSearch(e.target.value)} style={{flex: 1, minWidth: 120, padding: 6, borderRadius: 8, border: '1px solid #ddd'}} />
       </div>
       {/* Grid-Layout */}
-      <div className="gallery-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24}}>
+      <div className="gallery-grid" style={{gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px 56px'}}>
         {paged.map(img => (
           <button
             key={img.id}
@@ -380,25 +380,25 @@ export default function Portfolio() {
       {/* Infinite Scroll / Mehr laden */}
       {paged.length < filtered.length && (
         <div style={{textAlign: 'center', margin: '2rem 0'}}>
-          <button onClick={() => setPage(page + 1)} style={{padding: '0.8rem 2.5rem', borderRadius: 24, background: '#0070f3', color: '#fff', border: 'none', fontSize: 18, cursor: 'pointer'}}>Mehr laden</button>
+          <button onClick={() => setPage(page + 1)} style={{padding: '0.8rem 2.5rem', borderRadius: 24, background: '#ffb400', color: '#181818', border: 'none', fontSize: 18, cursor: 'pointer'}}>Mehr laden</button>
         </div>
       )}
       {/* Lightbox-Modal */}
       {lightbox && (
         <div
           tabIndex={-1}
-          style={{position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.92)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+          style={{position: 'fixed', inset: 0, background: 'rgba(24,24,24,0.98)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}
           onClick={() => setLightbox(null)}
           onKeyDown={e => { if (e.key === 'Escape') setLightbox(null); }}
         >
-          <div style={{background: '#fff', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative'}} onClick={e => e.stopPropagation()}>
-            <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16}} />
-            <div style={{marginBottom: 8}}><b>{lightbox.title}</b> <span style={{color: '#888'}}>({lightbox.year})</span></div>
+          <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)'}} onClick={e => e.stopPropagation()}>
+            <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818'}} />
+            <div style={{marginBottom: 8, color: '#ffb400'}}><b>{lightbox.title}</b> <span style={{color: '#aaa'}}>({lightbox.year})</span></div>
             <div style={{fontSize: 15, marginBottom: 8}}>{lightbox.category} | {lightbox.camera}</div>
             <div style={{fontSize: 15, marginBottom: 16}}>{lightbox.description}</div>
-            <button onClick={() => setLightbox(null)} style={{position: 'absolute', top: 12, right: 12, background: '#eee', border: 'none', borderRadius: 20, width: 36, height: 36, fontSize: 22, cursor: 'pointer'}}>×</button>
-            <button style={{position: 'absolute', bottom: 12, right: 60, background: '#fff', border: '1px solid #eee', borderRadius: 20, width: 36, height: 36, fontSize: 18, cursor: 'pointer'}}>♡</button>
-            <button style={{position: 'absolute', bottom: 12, right: 12, background: '#fff', border: '1px solid #eee', borderRadius: 20, width: 36, height: 36, fontSize: 18, cursor: 'pointer'}}>↗</button>
+            <button onClick={() => setLightbox(null)} style={{position: 'absolute', top: 12, right: 12, background: '#333', color: '#ffb400', border: 'none', borderRadius: 20, width: 36, height: 36, fontSize: 22, cursor: 'pointer'}}>×</button>
+            <button style={{position: 'absolute', bottom: 12, right: 60, background: '#232323', color: '#ffb400', border: '1px solid #444', borderRadius: 20, width: 36, height: 36, fontSize: 18, cursor: 'pointer'}}>♡</button>
+            <button style={{position: 'absolute', bottom: 12, right: 12, background: '#232323', color: '#ffb400', border: '1px solid #444', borderRadius: 20, width: 36, height: 36, fontSize: 18, cursor: 'pointer'}}>↗</button>
           </div>
         </div>
       )}

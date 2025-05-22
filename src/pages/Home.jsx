@@ -62,15 +62,15 @@ export default function Home() {
         {lightbox && (
           <div
             tabIndex={-1}
-            style={{position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.92)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+            style={{position: 'fixed', inset: 0, background: 'rgba(24,24,24,0.98)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center'}}
             onClick={() => setLightbox(null)}
             onKeyDown={e => { if (e.key === 'Escape') setLightbox(null); }}
           >
-            <div style={{background: '#fff', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative'}} onClick={e => e.stopPropagation()}>
-              <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16}} />
-              <div style={{marginBottom: 8}}><b>{lightbox.title}</b> <span style={{color: '#888'}}>({lightbox.year})</span></div>
-              <div style={{fontSize: 15, marginBottom: 8}}>{lightbox.category}</div>
-              <button onClick={() => setLightbox(null)} style={{position: 'absolute', top: 12, right: 12, background: '#eee', border: 'none', borderRadius: 20, width: 36, height: 36, fontSize: 22, cursor: 'pointer'}}>×</button>
+            <div style={{background: '#232323', borderRadius: 12, maxWidth: 900, width: '90vw', padding: 24, position: 'relative', color: '#eaeaea', boxShadow: '0 4px 32px rgba(0,0,0,0.45)'}} onClick={e => e.stopPropagation()}>
+              <img src={lightbox.src} alt={lightbox.title} style={{width: '100%', borderRadius: 8, marginBottom: 16, background: '#181818'}} />
+              <div style={{marginBottom: 8, color: '#ffb400'}}><b>{lightbox.title}</b> <span style={{color: '#aaa'}}>({lightbox.year})</span></div>
+              {lightbox.category && <div style={{fontSize: 15, marginBottom: 8}}>{lightbox.category}</div>}
+              <button onClick={() => setLightbox(null)} style={{position: 'absolute', top: 12, right: 12, background: '#333', color: '#ffb400', border: 'none', borderRadius: 20, width: 36, height: 36, fontSize: 22, cursor: 'pointer'}}>×</button>
             </div>
           </div>
         )}
