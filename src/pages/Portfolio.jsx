@@ -3,14 +3,14 @@ import React, { useState, useMemo } from "react";
 const DUMMY_IMAGES = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&q=80",
-    srcWebp: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&q=80&fm=webp",
-    title: "Herbst am See",
+    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80",
+    srcWebp: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80&fm=webp",
+    title: "Sonnenaufgang am Bergsee",
     year: 2023,
     category: "Landschaft",
-    tags: ["See", "Herbst", "Langzeitbelichtung"],
+    tags: ["See", "Sonnenaufgang", "Berge"],
     camera: "Sony A7 III",
-    description: "Stimmungsvolles Licht am Morgen.",
+    description: "Goldenes Licht am ruhigen Bergsee.",
     favorite: false,
   },
   {

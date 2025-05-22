@@ -11,8 +11,8 @@ const TOP_PROJECTS = [
   },
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=600&q=80",
-    title: "Herbst am See",
+    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80",
+    title: "Sonnenaufgang am Bergsee",
     year: 2023,
     category: "Landschaft",
   },
