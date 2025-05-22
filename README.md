@@ -1,12 +1,37 @@
-# React + Vite
+# PhotographyWebsite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dies ist eine moderne Fotografen-Webseite auf Basis von React und Vite.
 
-Currently, two official plugins are available:
+## Features
+- Portfolio mit Filter, Suche, Lightbox und Lazy-Loading
+- Darkmode-Design im Stil eines hochwertigen WordPress-Themes
+- Responsive und performant
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Projekt starten
 
-## Expanding the ESLint configuration
+1. Abhängigkeiten installieren:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+2. Entwicklungsserver starten:
+
+```bash
+npm run dev
+```
+
+3. Die lokale Adresse (z. B. http://localhost:5173) im Browser öffnen.
+
+## Eigenes Portfolio-Bild hinzufügen
+
+- Lege deine JPEGs in `src/assets/images/` ab.
+- Importiere sie in deinen Komponenten, z. B.:
+  ```js
+  import meinbild1 from '../assets/images/meinbild1.jpg';
+  ```
+- Füge sie wie die Beispielbilder in das Portfolio-Array ein.
+
+---
+
+Für Deployment- und weitere Hinweise siehe die Kommentare im Code.
