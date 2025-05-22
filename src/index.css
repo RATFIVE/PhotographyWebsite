@@ -25,25 +25,23 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  font-family: 'Inter', Arial, sans-serif;
-  background: #fff;
-  color: #222;
-  display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+  background: #181818;
+  color: #eaeaea;
 }
 
 #root {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.04);
-  border-radius: 1.5rem;
+  background: #181818;
+  box-shadow: none;
+  border-radius: 0;
   padding-bottom: 2rem;
 }
 
@@ -73,21 +71,24 @@ button:focus-visible {
 
 .main-nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
-  padding: 2rem 0 1rem 0;
-  background: #fff;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #eee;
+  padding: 2.5rem 0 1.5rem 0;
+  background: transparent;
+  font-size: 1.15rem;
+  border-bottom: 1px solid #232323;
+  letter-spacing: 0.04em;
 }
 .main-nav a {
-  color: #222;
+  color: #eaeaea;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   transition: color 0.2s;
 }
 .main-nav a:hover {
-  color: #0070f3;
+  color: #ffb400;
 }
 
 .hero {
@@ -96,39 +97,49 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
+  background: #111;
   text-align: center;
-  padding: 4rem 1rem 2rem 1rem;
+  padding: 5rem 1rem 3rem 1rem;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
 }
 .hero button {
-  margin-top: 2rem;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  padding: 1.1rem 2.8rem;
+  font-size: 1.15rem;
   border: none;
-  background: #0070f3;
-  color: #fff;
-  border-radius: 2rem;
+  background: #ffb400;
+  color: #181818;
+  border-radius: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
 .hero button:hover {
-  background: #005bb5;
+  background: #fff;
+  color: #181818;
 }
 
 .preview-grid, .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px 40px;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px 56px;
+  margin: 2.5rem 0;
 }
 .preview-img, .gallery-item {
-  background: #eaeaea;
+  background: #232323;
   height: 220px;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,46 +148,46 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
 }
 .gallery-item {
   aspect-ratio: 4/3;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-  transition: box-shadow 0.2s, transform 0.2s;
   outline: none;
   border: none;
   padding: 0;
 }
 .gallery-item:focus {
-  box-shadow: 0 0 0 3px #0070f3;
+  box-shadow: 0 0 0 3px #ffb400;
 }
 .gallery-item:hover img,
 .gallery-item:focus img {
-  transform: scale(1.03);
-  filter: brightness(0.85);
+  transform: scale(1.04);
+  filter: brightness(0.82);
 }
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   transition: transform 0.2s, filter 0.2s;
 }
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.18);
+  background: linear-gradient(0deg, rgba(24,24,24,0.82) 60%, rgba(24,24,24,0.12) 100%);
   color: #fff;
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 1rem;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  border-radius: 0.7rem;
+  padding: 18px 16px 14px 16px;
+  font-size: 1.08rem;
+  font-weight: 600;
   pointer-events: none;
   transition: opacity 0.2s;
+  letter-spacing: 0.03em;
 }
 .gallery-item:hover .gallery-overlay,
 .gallery-item:focus .gallery-overlay {
@@ -186,7 +197,7 @@ button:focus-visible {
 @media (max-width: 600px) {
   .main-nav {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     font-size: 1rem;
   }
   .hero h1 {
@@ -194,12 +205,14 @@ button:focus-visible {
   }
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 18px 0;
   }
 }
 
 @media (max-width: 900px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px 24px;
   }
 }
 
