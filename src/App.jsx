@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/PhotographyWebsite">
       <nav className="main-nav">
         <Link to="/">Home</Link>
         <Link to="/portfolio">Portfolio</Link>
