@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: dein-github-user/dein-repo # <-- Hier GitHub-User und Repo eintragen
+  branch: main
+  client_id: GITHUB_CLIENT_ID # <-- Hier die Client-ID deiner GitHub OAuth App eintragen
+  auth_scope: repo
+
+media_folder: src/assets/images
+public_folder: /src/assets/images
+media_library:
+  name: media-library
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    folder: src/content/portfolio
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Jahr
+        name: year
+        widget: number
+      - label: Kategorie
+        name: category
+        widget: string
+      - label: Bild
+        name: image
+        widget: image
+      - label: Beschreibung
+        name: description
+        widget: text
