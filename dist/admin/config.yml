@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: dein-github-user/dein-repo # <-- Hier GitHub-User und Repo eintragen
+  repo: RATFIVE/PhotographyWebsite # <-- Hier GitHub-User und Repo eintragen
   branch: main
-  client_id: GITHUB_CLIENT_ID # <-- Hier die Client-ID deiner GitHub OAuth App eintragen
+  client_id: Ov23li4qxWoPiOVuTu3o # <-- Hier die Client-ID deiner GitHub OAuth App eintragen
   auth_scope: repo
 
 media_folder: src/assets/images
