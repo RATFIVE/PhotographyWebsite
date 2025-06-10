@@ -7,9 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node modules (immer ignorieren)
+/node_modules
+
+# Für GitHub Pages Deployment: dist NICHT ignorieren!
+# dist
+# dist-ssr
+
 *.local
 
 # Editor directories and files
@@ -22,3 +26,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Hinweis: Für GitHub Pages muss der Build-Ordner (dist) im Repo liegen!
